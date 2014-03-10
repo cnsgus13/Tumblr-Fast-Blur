@@ -22,7 +22,7 @@
 }
 - (IBAction)showTumblrMenu:(id)sender {
     TumblrMenuView *menuView = [[TumblrMenuView alloc] init];
-    [menuView addMenuItemWithTitle:@"Art" andIcon:[UIImage imageNamed:@"post_type_bubble_text.png"] andSelectedBlock:^{
+    [menuView addMenuItemWithTitle:@"Art" andIcon:[UIImage imageNamed:@"testArt.png"] andSelectedBlock:^{
         NSLog(@"Art selected");
     }];
     [menuView addMenuItemWithTitle:@"Tech" andIcon:[UIImage imageNamed:@"post_type_bubble_photo.png"] andSelectedBlock:^{

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D47D6FE18CD609000774DBE /* testArt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D47D6FD18CD609000774DBE /* testArt.png */; };
 		8DE9C78018CD045600BA75B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE9C77F18CD045600BA75B1 /* Foundation.framework */; };
 		8DE9C78218CD045600BA75B1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE9C78118CD045600BA75B1 /* CoreGraphics.framework */; };
 		8DE9C78418CD045600BA75B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE9C78318CD045600BA75B1 /* UIKit.framework */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D47D6FD18CD609000774DBE /* testArt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testArt.png; sourceTree = "<group>"; };
 		8DE9C77C18CD045600BA75B1 /* Tumblr-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tumblr-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE9C77F18CD045600BA75B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8DE9C78118CD045600BA75B1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -147,6 +149,7 @@
 		8DE9C78518CD045600BA75B1 /* Tumblr-Test */ = {
 			isa = PBXGroup;
 			children = (
+				8D47D6FD18CD609000774DBE /* testArt.png */,
 				8DE9C7D518CD3E5200BA75B1 /* bg1.jpg */,
 				8DE9C7CF18CD07BB00BA75B1 /* background.png */,
 				8DE9C7B718CD057C00BA75B1 /* post_type_bubble_chat.png */,
@@ -288,6 +291,7 @@
 				8DE9C7CD18CD057C00BA75B1 /* post_type_bubble_video.png in Resources */,
 				8DE9C79818CD045600BA75B1 /* Images.xcassets in Resources */,
 				8DE9C7CE18CD057C00BA75B1 /* post_type_bubble_video@2x.png in Resources */,
+				8D47D6FE18CD609000774DBE /* testArt.png in Resources */,
 				8DE9C7C318CD057C00BA75B1 /* post_type_bubble_chat.png in Resources */,
 				8DE9C7C518CD057C00BA75B1 /* post_type_bubble_link.png in Resources */,
 				8DE9C78A18CD045600BA75B1 /* InfoPlist.strings in Resources */,

@@ -7,9 +7,7 @@
 //
 
 #import "TumblrMenuView.h"
-
 #import <Accelerate/Accelerate.h>
-
 
 #define TumblrMenuViewTag 1999
 #define TumblrMenuViewImageHeight 90
@@ -22,6 +20,9 @@
 #define TumblrMenuViewAnimationInterval (TumblrMenuViewAnimationTime / 5)
 
 #define TumblrBlue [UIColor colorWithRed:45/255.0f green:68/255.0f blue:94/255.0f alpha:1.0]
+
+#define BlurredBackgroundDefaultGlassColor [UIColor blackColor]
+
 
 @interface TumblrMenuItemButton : UIControl
 - (id)initWithTitle:(NSString*)title andIcon:(UIImage*)icon andSelectedBlock:(TumblrMenuViewSelectedBlock)block;
@@ -69,6 +70,7 @@
     NSMutableArray *buttons_;
 }
 @synthesize backgroundImgView = backgroundView_;
+@synthesize glassView = _glassView;
 
 
 - (id)initWithFrame:(CGRect)frame
@@ -80,19 +82,29 @@
         ges.delegate = self;
         [self addGestureRecognizer:ges];
         self.backgroundColor = [UIColor clearColor];
+        
+        // Call blur effect
         backgroundView_ = [[UIImageView alloc] initWithFrame:self.bounds];
-        
-        // backgroundView_.backgroundColor = TumblrBlue;
-        
+     
+        // take a screenshot first
         UIWindow *window = [[UIApplication sharedApplication] keyWindow];
         UIView *topView = window.rootViewController.view;
         UIImage *screenShot = [self captureView:topView];
         UIImage *blurredImage = [self applyBlurOnImage: screenShot withRadius: 0.75];
         
         backgroundView_.backgroundColor = [UIColor colorWithPatternImage:blurredImage];
-        
         backgroundView_.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         [self addSubview:backgroundView_];
+        
+        // Call the matte glass effect
+        _glassView = [[UIView alloc] initWithFrame: self.bounds];
+        _glassView.alpha = 0.5;
+        // another color
+        // _glassView.backgroundColor = BlurredBackgroundDefaultGlassColor;
+        _glassView.backgroundColor = TumblrBlue;
+        _glassView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        [self addSubview: _glassView];
+        
         buttons_ = [[NSMutableArray alloc] initWithCapacity:6];
         
     }
@@ -110,7 +122,7 @@
     return image;
 }
 
-// Blur effect
+// Blur effect algorithm
 - (UIImage *)applyBlurOnImage: (UIImage *)imageToBlur
                    withRadius:(CGFloat)blurRadius {
     if ((blurRadius < 0.0f) || (blurRadius > 1.0f)) {
