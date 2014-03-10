@@ -44,6 +44,8 @@
         titleLabel_.backgroundColor = [UIColor clearColor];
         titleLabel_.textColor = [UIColor whiteColor];
         titleLabel_.text = title;
+        // Set font size
+        [titleLabel_ setFont:[UIFont systemFontOfSize:15]];
         _selectedBlock = block;
         [self addSubview:iconView_];
         [self addSubview:titleLabel_];
